@@ -1,0 +1,150 @@
+[gd_scene load_steps=22 format=3 uid="uid://7fd2snxlu3m4"]
+
+[ext_resource type="Texture2D" uid="uid://b0b28nm2d2a0s" path="res://graphics/Pineapple.png" id="1_fbrm3"]
+[ext_resource type="Script" path="res://scenes/pineapple.gd" id="1_nnw53"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_it4gk"]
+height = 34.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l2om"]
+atlas = ExtResource("1_fbrm3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50pw5"]
+atlas = ExtResource("1_fbrm3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gu4gv"]
+atlas = ExtResource("1_fbrm3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1an4"]
+atlas = ExtResource("1_fbrm3")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cvuj"]
+atlas = ExtResource("1_fbrm3")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpn1m"]
+atlas = ExtResource("1_fbrm3")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcbk3"]
+atlas = ExtResource("1_fbrm3")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfymq"]
+atlas = ExtResource("1_fbrm3")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drdhg"]
+atlas = ExtResource("1_fbrm3")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vt7ga"]
+atlas = ExtResource("1_fbrm3")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqa1t"]
+atlas = ExtResource("1_fbrm3")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kagrm"]
+atlas = ExtResource("1_fbrm3")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvidl"]
+atlas = ExtResource("1_fbrm3")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppv6r"]
+atlas = ExtResource("1_fbrm3")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e54ck"]
+atlas = ExtResource("1_fbrm3")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oogim"]
+atlas = ExtResource("1_fbrm3")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hr72d"]
+atlas = ExtResource("1_fbrm3")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5tjeh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l2om")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50pw5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gu4gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1an4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cvuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpn1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcbk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfymq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drdhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vt7ga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqa1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kagrm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvidl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppv6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e54ck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oogim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hr72d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="Pineapple" type="Area2D"]
+script = ExtResource("1_nnw53")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_it4gk")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.71094, 1.71094)
+sprite_frames = SubResource("SpriteFrames_5tjeh")
+autoplay = "default"
+frame = 16
+frame_progress = 0.835965
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
